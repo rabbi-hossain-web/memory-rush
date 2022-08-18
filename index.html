@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Rush</title>
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet"> 
+</head>
+<body onload="preLoader()">
+    <audio id="bg-audio" src="assets/sfx/bg-theme.mp3"></audio>
+    <div class="container">
+        <canvas id="my-canvas"></canvas>
+    <div id="pre-loader">
+        <h4>Loading<div class="bar"></div></h4>
+    </div>
+    <div id="game_menu">
+        <h2 class="glitch"><span aria-hidden="true">MEMORY RUSH</span>MEMORY RUSH<span aria-hidden="true">MEMORY RUSH</span></h2>
+        <ul>
+            <li onclick="classicPlay()">Classic</li>
+            <li onclick="timeAttackPlay()">Time</li>
+            <!-- <li onclick="settingsHandle()">Settings</li> -->
+        </ul>
+    </div>
+    <div id="main-wrap">
+        <div class="header">
+            <h2 class="glitch"><span aria-hidden="true">MEMORY RUSH</span>MEMORY RUSH<span aria-hidden="true">MEMORY RUSH</span></h2>
+        </div>
+        <div class="inner-display">
+                <div class="misk">
+                    <h6 ><i id="timerToggle" class="fa-solid fa-stopwatch"></i> Time:  <span id="timer">0.00</span></h6>
+                    <h6><i class="fa-solid fa-trophy"></i> Lowest Time: <span id="side-high-score">0.00</span> </h6>
+                    <ul>
+                        <li id="soundToggler" onclick="soundToggler()"><i class="fa-solid fa-volume-off"></i></li>
+                        <li onclick="restartGameSideBar()"><i class="fa-solid fa-arrow-rotate-right"></i></li>
+                        <li onclick="menuBtnSide()"><i class="fa-solid fa-bars"></i></li>
+                    </ul>
+                </div>
+                <div class="cards-area">
+                    <div class="card-item" id="0" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-0"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="1" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-1"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="2" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-2"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="3" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-3"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="4" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-4"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="5" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-5"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="6" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-6"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="7" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-7"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="8" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-8"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="9" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-9"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="10" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-10"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="11" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-11"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="12" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-12"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="13" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-13"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="14" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-14"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="15" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-15"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-item" id="16" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-16"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    
+                    <div class="card-item" id="17" onClick="response(this.id)">
+                        <div class="card-front">
+                            <h5>?</h5>
+                        </div>
+                        <div class="card-back">
+                            <img class="item-17"  src="" width="" alt="">
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <div id="end-display" class="remove">
+                <h4>Time : <span style="color: #96EEAF;" id="currentScore"></span></h4>
+                <h4><span id="newScore"></span> Lowest Time : <span id="high-score"></span></h4>
+                <ul>
+                    <li><a onclick="menuBtn()">Menu<i class="fa-solid fa-bars"></i></a></li>
+                    <li><a onclick="restartGame()">Play Again<i class="fa-solid fa-arrow-rotate-right"></i></a></li>
+                </ul>
+            </div>
+            <div id="ovly" class="remove"></div>
+        </div>
+    </div>
+    <div id="footer">
+        <h6>Copyright &copy; 2022 | Made with <i class="fa-solid fa-heart"></i> by <a href="https://rabbi-hossain.com/#home" target="_blank">Rabbi Hossain</a></h6>
+    </div>
+    <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
+    <script src="assets/js/confetti.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/main.js"></script>  
+</body>
+</html>
